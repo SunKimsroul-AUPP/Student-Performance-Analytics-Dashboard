@@ -1,0 +1,1 @@
+# Make auth a package.

@@ -1,0 +1,132 @@
+/* ---------- Global basics (Bootstrap-friendly) ---------- */
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: #f5f6f8;
+  color: #212529;
+}
+
+/* Page headings */
+.page-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+.section-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* Navbar */
+
+.navbar-brand {
+  font-weight: 600;
+}
+
+.navbar .nav-link.active {
+  font-weight: 600;
+}
+
+/* Cards */
+
+.section-card {
+  border-radius: 0.5rem;
+}
+
+.section-card .card-header {
+  font-weight: 600;
+}
+
+/* ---------- KPI cards (Overview) ---------- */
+
+.kpi-card {
+  border-radius: 0.5rem;
+  border-left: 4px solid #0d6efd;
+}
+
+.kpi-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6c757d;
+  margin-bottom: 0.25rem;
+}
+
+.kpi-value {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+/* ---------- Risk level coloring ---------- */
+
+.risk-low {
+  border-left: 4px solid #198754; /* green */
+  background-color: #f6fffa;
+}
+
+.risk-medium {
+  border-left: 4px solid #ffc107; /* yellow */
+  background-color: #fffbe6;
+}
+
+.risk-high {
+  border-left: 4px solid #dc3545; /* red */
+  background-color: #fff5f5;
+}
+
+.risk-unknown {
+  border-left: 4px solid #6c757d; /* gray */
+  background-color: #f8f9fa;
+}
+
+/* At-Risk list layout */
+
+#risk-list .list-group-item {
+  display: flex;
+  flex-direction: column;
+  padding-top: 0.45rem;
+  padding-bottom: 0.45rem;
+}
+
+.risk-name {
+  font-weight: 600;
+}
+
+.risk-meta {
+  color: #6c757d;
+  font-size: 0.85rem;
+}
+
+.badge-risk {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Tables */
+
+.table-sm td,
+.table-sm th {
+  padding: 0.4rem 0.6rem;
+}
+
+/* Student search layout (if you use it on students.html) */
+
+.student-search-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+}
+
+/* ---------- Responsive tweaks ---------- */
+
+@media (max-width: 768px) {
+  body {
+    padding: 0 0.5rem;
+  }
+
+  .page-title {
+    font-size: 1.4rem;
+  }
+}

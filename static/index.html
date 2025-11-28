@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Student Analytics – Overview</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Shared navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Student Analytics</a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="/">Overview</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/faculty.html">Faculty</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/advisors.html">Advisor</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/students.html">Student</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/courses.html">Courses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/data.html">Data Admin</a>
+          </li>
+        </ul>
+
+        <div class="d-flex align-items-center ms-auto">
+          <span class="navbar-text me-3" id="nav-user"></span>
+          <button id="logout-btn" class="btn btn-outline-light btn-sm">
+            Logout
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container mb-4">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page">Overview</li>
+      </ol>
+    </nav>
+
+    <h1 class="page-title mb-1">Overview dashboard</h1>
+    <p class="text-muted mb-3">
+      High-level summary of GPA, at-risk students, and cohort trends.
+    </p>
+
+    <!-- KPI cards row -->
+    <div class="row g-3 mb-3" id="headline-metrics">
+      <div class="col-md-4">
+        <div class="card kpi-card shadow-sm">
+          <div class="card-body">
+            <div class="kpi-label">Total students</div>
+            <div class="kpi-value" id="kpi-total-students">–</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card kpi-card shadow-sm">
+          <div class="card-body">
+            <div class="kpi-label">Average GPA</div>
+            <div class="kpi-value" id="kpi-avg-gpa">–</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card kpi-card shadow-sm">
+          <div class="card-body">
+            <div class="kpi-label">At-risk students</div>
+            <div class="kpi-value" id="kpi-at-risk">–</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8">
+        <div class="card section-card shadow-sm">
+          <div class="card-header">GPA Leaderboard</div>
+          <div class="card-body">
+            <div class="row mb-2">
+              <div class="col-auto">
+                <label class="form-label small mb-0" for="gpa-filter">Search by Student ID:</label>
+                <input id="gpa-filter" class="form-control form-control-sm" placeholder="Enter student ID..." />
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table
+                id="gpa-table"
+                class="table table-striped table-sm align-middle mb-0"
+              >
+                <thead class="table-light">
+                  <tr>
+                    <th>Student ID</th>
+                    <th>Student</th>
+                    <th>Major</th>
+                    <th>Cohort</th>
+                    <th>GPA</th>
+                    <th>Total Credits</th>
+                    <th>Avg Attendance (%)</th>
+                    <th>DFW Count</th>
+                    <th>Credits Attempted</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card section-card shadow-sm mb-3">
+          <div class="card-header">At-Risk Students</div>
+          <div class="card-body p-0">
+            <ul id="risk-list" class="list-group list-group-flush mb-0"></ul>
+          </div>
+        </div>
+
+        <div class="card section-card shadow-sm">
+          <div class="card-header">Cohort GPA Trend</div>
+          <div class="card-body">
+            <canvas id="cohortChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  ></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="js/login.js"></script>
+  <script>
+    // Wire navbar on Overview page
+    initNavbarAuthShared();
+  </script>
+  <script src="js/app.js"></script>
+</body>
+</html>

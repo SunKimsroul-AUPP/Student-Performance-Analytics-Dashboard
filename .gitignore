@@ -1,0 +1,21 @@
+/.venv/
+env/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+/.vscode/
+.DS_Store
+
+# Data files (optional — excluded to avoid committing large CSVs)
+data/*.csv
+
+# Python bytecode
+*.py[cod]
+
+# Logs
+*.log
+
+# Virtual environment
+/.venv/

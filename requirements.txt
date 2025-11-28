@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+pandas
+numpy
+networkx
+scipy
+pydantic
+pyyaml
+python-multipart
+python-jose[cryptography]

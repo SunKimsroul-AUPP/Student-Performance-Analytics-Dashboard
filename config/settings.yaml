@@ -1,0 +1,23 @@
+app:
+  title: "Student Performance Analytics API"
+  data_dir: "data"
+  debug: true
+
+risk:
+  # Thresholds: below these are considered at-risk
+  gpa_threshold: 2.0            # GPA < 2.0 on 4.0 scale = LOW_GPA
+  attendance_threshold: 70      # Avg attendance < 70% = LOW_ATTENDANCE
+  dfw_grade_threshold: 60       # Grade < 60 counts as a D/F/W event
+
+  # Weights for the composite risk score
+  gpa_weight: 1.0
+  attendance_weight: 1.0
+  dfw_weight: 0.5
+
+grading:
+  scale: "standard"
+
+auth:
+  secret_key: "CHANGE_THIS_TO_A_RANDOM_LONG_SECRET_KEY_1234567890"
+  algorithm: "HS256"
+  access_token_expire_minutes: 60
