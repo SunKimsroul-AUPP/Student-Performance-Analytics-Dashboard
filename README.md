@@ -437,49 +437,79 @@ The Navbar and page-level JS then enforce which dashboards you can see.
 
 ```text
 project/
+├─ README.md
+├─ requirements.txt
 ├─ config/
 │  └─ settings.yaml
 ├─ data/
 │  ├─ students.csv
 │  ├─ courses.csv
 │  ├─ enrollments.csv
-│  └─ prerequisites.csv
-├─ app/
-│  ├─ main.py           # FastAPI app, static mount
-│  ├─ router.py         # All API routes
+│  ├─ prerequisites.csv
+│  └─ inferred_prerequisites.csv
+├─ notebooks/
+│  └─ exploration.ipynb
+├─ scripts/
+│  └─ generate_full_prereqs.py
+├─ src/
+│  ├─ __init__.py
+│  ├─ api/
+│  │  ├─ __init__.py
+│  │  ├─ main.py          # FastAPI app (entry), static mount
+│  │  └─ router.py        # API route registrations
 │  ├─ auth/
-│  │  └─ auth.py        # JWT auth, user store, roles, require_role()
+│  │  ├─ ___init___.py
+│  │  └─ auth.py          # JWT auth, user store, roles, require_role()
+│  ├─ data_access/
+│  │  ├─ __init__.py
+│  │  ├─ loaders.py
+│  │  └─ validators.py
 │  ├─ domain/
+│  │  ├─ __init__.py
+│  │  ├─ course.py
+│  │  ├─ enrollment.py
 │  │  ├─ grade_scale.py
-│  │  └─ gradebook.py
+│  │  ├─ gradebook.py
+│  │  └─ student.py
+│  ├─ graph/
+│  │  ├─ __init__.py
+│  │  └─ prereq_graph.py
+│  ├─ models/
+│  │  ├─ __init__.py
+│  │  └─ dto.py           # Pydantic models / DTOs
 │  ├─ services/
+│  │  ├─ __init__.py
 │  │  ├─ analytics_service.py
 │  │  ├─ data_service.py
-│  │  ├─ risk_service.py
-│  │  └─ graph_service.py
-│  ├─ models/
-│  │  └─ dto.py         # Pydantic models for responses
+│  │  ├─ graph_service.py
+│  │  ├─ loader_service.py
+│  │  └─ risk_service.py
 │  └─ utils/
-│     └─ config_loader.py
-└─ static/
-   ├─ index.html        # Overview
-   ├─ faculty.html      # Faculty view
-   ├─ advisors.html     # Advisor view
-   ├─ students.html     # Student view
-   ├─ courses.html      # Courses view
-   ├─ data.html         # Data Admin
-   ├─ login.html        # Login page
-   ├─ js/
-   │  ├─ auth.js
-   │  ├─ login.js
-   │  ├─ app.js         # Overview logic
-   │  ├─ faculty.js
-   │  ├─ advisors.js
-   │  ├─ students.js
-   │  ├─ courses.js
-   │  └─ data.js
-   └─ css/
-      └─ styles.css
+│     ├─ __init__.py
+│     ├─ config_loader.py
+│     ├─ exceptions.py
+│     └─ logging.py
+├─ static/
+│  ├─ index.html          # Overview
+│  ├─ faculty.html        # Faculty view
+│  ├─ advisors.html       # Advisor view
+│  ├─ students.html       # Student view
+│  ├─ courses.html        # Courses view
+│  ├─ data.html           # Data Admin
+│  ├─ login.html          # Login page
+│  ├─ css/
+│  │  └─ styles.css
+│  └─ js/
+│     ├─ advisors.js
+│     ├─ app.js           # Overview logic
+│     ├─ auth.js
+│     ├─ courses.js
+│     ├─ data.js
+│     ├─ faculty.js
+│     ├─ login.js
+│     └─ students.js
+└─ tools/
+    └─ generate_full_prereqs.py
 ```
 
 ---
