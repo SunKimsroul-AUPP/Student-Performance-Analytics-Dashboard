@@ -19,7 +19,7 @@ This file summarizes the top-level structure of the repository and key files for
         students.js
 tools/
     generate_full_prereqs.py
-```
+
 
 ## Notes
 
@@ -35,7 +35,7 @@ Open the project root in VS Code:
 
 Below is an updated tree-style layout that matches the repository's current files and folders, shown in the ASCII style you requested.
 
-```text
+```
 project/
 ├─ README.md
 ├─ requirements.txt
