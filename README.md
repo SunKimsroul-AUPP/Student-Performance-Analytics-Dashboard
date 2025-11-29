@@ -524,7 +524,7 @@ If you want to build on this:
 - Add API keys for automated exports.
 - Add test coverage for analytics and risk logic with `pytest`.
 
-This project is already a solid foundation for showing skills in:
+This project is already cover:
 
 - Python data analytics (pandas).
 - Web API design (FastAPI).
